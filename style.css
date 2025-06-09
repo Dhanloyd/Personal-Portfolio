@@ -1,0 +1,384 @@
+/* Reset and base */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Helvetica, Arial, sans-serif;
+  background-color: #111827;
+  color: #d1d5db; /* neutral gray on dark */
+  font-size: 18px;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #d1d5db;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover,
+a:focus {
+  color: #6366f1;
+  outline-offset: 2px;
+}
+
+/* Header & Nav */
+header {
+  position: sticky;
+  top: 0;
+  background: #111827;
+  border-bottom: 1px solid #1e293b;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.9);
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #d1d5db;
+  letter-spacing: 0.05em;
+  user-select: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  font-weight: 600;
+  font-size: 1.125rem;
+  position: relative;
+  padding: 0.25rem 0;
+  color: #d1d5db;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #6366f1;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+.nav-links a:hover::after,
+.nav-links a:focus::after {
+  width: 100%;
+}
+
+/* Main container */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 6rem 1rem;
+  color: #d1d5db;
+
+}
+
+.hero-content {
+  flex: 1 1 380px;
+  max-width: 600px;
+  text-align: left;
+  margin-bottom: 150px;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 800;
+  margin: 0 0 1rem;
+  user-select: none;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  color: #a1a6b4;
+  margin-bottom: 2rem;
+  max-width: 520px;
+}
+
+.hero-cta {
+  display: inline-block;
+  background: #6366f1;
+  color: #111827;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 1rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(99, 102, 241, 0.4);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.4s ease, transform 0.3s ease;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+}
+
+.hero-cta:hover,
+.hero-cta:focus {
+  background-color: #4f46e5;
+  transform: scale(1.05);
+  outline: none;
+}
+
+/* Social Icons Container next to Browse Projects button */
+
+
+/* Hero Image */
+.hero-image {
+  flex: 1 1 380px;
+  max-width: 450px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+  margin-top: -200px;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  filter: drop-shadow(0 1px 5px rgba(0, 0, 0, 0.7));
+  
+}
+
+/* About Section */
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  color: #d1d5db;
+}
+
+.about-image {
+  flex: 1 1 300px;
+  max-width: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.about-content {
+  flex: 1 1 420px;
+  max-width: 700px;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.about-content h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #e0e7ff;
+  margin-bottom: 1.25rem;
+  user-select: none;
+}
+
+/* Skills */
+.skills-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 2.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-card {
+  background: #1e293b;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(17, 24, 39, 0.7);
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #e0e7ff;
+  font-weight: 700;
+  font-size: 1.25rem;
+  cursor: default;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover,
+.skill-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px rgba(147, 197, 253, 0.8);
+  outline: none;
+}
+
+/* Projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+}
+
+.project-card {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: #1e293b;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 6px 20px rgba(17, 24, 39, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover,
+.project-card:focus {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 48px rgba(147, 197, 253, 0.8);
+  outline: none;
+}
+
+.project-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  user-select: none;
+  color: #e0e7ff;
+}
+
+.github-icon {
+  display: inline-flex;
+  color: #a5b4fc;
+  transition: color 0.3s ease;
+}
+.project-card:hover .github-icon,
+.project-card:focus .github-icon {
+  color: #818cf8;
+}
+.github-icon svg {
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+/* Contact */
+#contact {
+  user-select: none;
+}
+
+#contact h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #e0e7ff;
+  margin-bottom: 1.5rem;
+}
+
+.contact-info {
+  max-width: 600px;
+  font-size: 18px;
+  color: #cbd5e1;
+  margin-bottom: 0.5rem;
+}
+
+.email-link {
+  color: #a5b4fc;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+.email-link:hover,
+.email-link:focus {
+  text-decoration: underline;
+  outline: none;
+  color: #818cf8;
+}
+
+/* Accessibility focus outline helper */
+.user-is-tabbing a:focus,
+.user-is-tabbing button:focus,
+.user-is-tabbing input:focus,
+.user-is-tabbing .project-card:focus-within,
+.user-is-tabbing .skill-card:focus-within,
+.user-is-tabbing .hero-cta:focus,
+.user-is-tabbing .social-icon:focus {
+  outline: 3px solid #818cf8;
+  outline-offset: 3px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column-reverse;
+    padding-top: 4rem;
+  }
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+  .hero-cta {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-image {
+    max-width: 100%;
+    width: 90vw;
+  }
+  .about-section {
+    flex-direction: column;
+  }
+  .about-image,
+  .about-content {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 32px;
+  }
+  .hero-subtitle {
+    font-size: 16px;
+  }
+  nav {
+    padding: 1rem;
+  }
+  .nav-links {
+    gap: 1rem;
+  }
+}
